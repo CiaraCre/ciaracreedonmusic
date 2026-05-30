@@ -570,12 +570,23 @@
   }
 
   .footer-social a {
-    font-size: 0.7rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.78rem;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: rgba(237,232,245,0.4);
+    color: white;
     text-decoration: none;
-    transition: color 0.3s;
+    background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+    padding: 0.65rem 1.4rem;
+    transition: opacity 0.3s, transform 0.2s;
+    font-weight: 500;
+  }
+
+  .footer-social a:hover {
+    opacity: 0.85;
+    transform: translateY(-2px);
   }
 
   .footer-social a:hover { color: var(--gold); }
@@ -627,7 +638,6 @@
   <a href="#" class="nav-logo">Ciara Creedon Music</a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
-    <li><a href="#services">Services</a></li>
     <li><a href="#repertoire">Repertoire</a></li>
     <li><a href="#testimonials">Testimonials</a></li>
     <li><a href="#contact">Enquire</a></li>
@@ -681,41 +691,7 @@
   </div>
 </section>
 
-<!-- SERVICES -->
-<section class="services" id="services">
-  <div class="reveal">
-    <p class="section-tag">What I Offer</p>
-    <h2 class="section-title">Ceremony <em>packages</em></h2>
-  </div>
-  <div class="services-grid">
-    <div class="service-card reveal" style="transition-delay: 0.1s">
-      <div class="service-num">01</div>
-      <div class="service-name">Ceremony Solo</div>
-      <p class="service-desc">
-        Vocal performance with acoustic guitar or backing track for your 
-        full ceremony — prelude, processional, signing of the register, 
-        and recessional.
-      </p>
-    </div>
-    <div class="service-card reveal" style="transition-delay: 0.2s">
-      <div class="service-num">02</div>
-      <div class="service-name">Church & Civil</div>
-      <p class="service-desc">
-        Experienced performing in churches, hotels, barns, and outdoor venues 
-        across Ireland. Fully adaptable to acoustic or PA requirements.
-      </p>
-    </div>
-    <div class="service-card reveal" style="transition-delay: 0.3s">
-      <div class="service-num">03</div>
-      <div class="service-name">Custom Song</div>
-      <p class="service-desc">
-        Want a specific song learned just for your day? I'll learn any 
-        song you request — simply get in touch in advance and I'll 
-        make it happen.
-      </p>
-    </div>
-  </div>
-</section>
+
 
 <!-- VIDEO -->
 <section style="background: var(--dark); padding: 6rem; text-align: center;">
@@ -868,12 +844,33 @@
   </form>
 </section>
 
+<!-- INSTAGRAM -->
+<section style="background: var(--lavender-pale); padding: 4rem 6rem; text-align: center;">
+  <div class="reveal">
+    <p class="section-tag">Follow Along</p>
+    <h2 class="section-title" style="margin-bottom: 1rem;">See Ciara <em>in action</em></h2>
+    <p style="font-size: 0.95rem; font-weight: 300; color: var(--mid); margin-bottom: 2rem;">
+      Watch performance clips and behind-the-scenes moments on Instagram.
+    </p>
+    <a href="https://www.instagram.com/ciaracreedonmusic" target="_blank" rel="noopener"
+      style="display: inline-flex; align-items: center; gap: 0.7rem; padding: 1rem 2.2rem;
+             background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+             color: white; text-decoration: none; font-family: 'Jost', sans-serif;
+             font-size: 0.85rem; letter-spacing: 0.18em; text-transform: uppercase;
+             font-weight: 500; transition: opacity 0.3s, transform 0.2s;">
+      📷 &nbsp;@ciaracreedonmusic
+    </a>
+  </div>
+</section>
+
 <!-- FOOTER -->
 <footer>
   <div class="footer-logo">Ciara Creedon Music</div>
   <div class="footer-copy">© 2026 Ciara Creedon Music · Ireland</div>
   <div class="footer-social">
-    <a href="https://www.instagram.com/ciaracreedonmusic" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://www.instagram.com/ciaracreedonmusic" target="_blank" rel="noopener">
+      📷 @ciaracreedonmusic
+    </a>
   </div>
 </footer>
 
