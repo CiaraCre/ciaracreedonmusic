@@ -58,6 +58,7 @@
     transition: color 0.3s;
   }
   .nav-links a:hover { color: var(--gold); }
+  .nav-hamburger { display: none; }
 
   /* ── HERO ── */
   .hero {
@@ -614,22 +615,119 @@
 
   /* ── RESPONSIVE ── */
   @media (max-width: 900px) {
-    nav { padding: 1.2rem 2rem; }
+
+    /* NAV */
+    nav { padding: 1rem 1.5rem; }
     .nav-links { display: none; }
-    .hero { grid-template-columns: 1fr; }
-    .hero-right { display: none; }
-    .hero-left { padding: 4rem 2rem; }
-    section { padding: 5rem 2rem; }
-    .about { grid-template-columns: 1fr; gap: 3rem; }
+
+    /* Hamburger menu */
+    .nav-hamburger {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .nav-hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--dark);
+      transition: all 0.3s;
+    }
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 60px; left: 0; right: 0;
+      background: rgba(248,246,252,0.98);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      z-index: 99;
+      padding: 1.5rem 2rem;
+      flex-direction: column;
+      gap: 0;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      font-size: 0.85rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--mid);
+      text-decoration: none;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--border);
+      transition: color 0.3s;
+    }
+    .mobile-menu a:last-child { border-bottom: none; }
+    .mobile-menu a:hover { color: var(--gold); }
+
+    /* HERO */
+    .hero { grid-template-columns: 1fr; min-height: auto; padding-top: 70px; }
+    .hero-right { height: 260px; display: block; }
+    .hero-left { padding: 2.5rem 1.5rem; }
+    .hero-title { font-size: 2.8rem; }
+    .hero-cta { flex-direction: column; align-items: flex-start; gap: 1rem; }
+
+    /* SECTIONS */
+    section { padding: 4rem 1.5rem; }
+
+    /* ABOUT */
+    .about { grid-template-columns: 1fr; gap: 2rem; padding: 4rem 1.5rem; }
+
+    /* GENRES */
+    .genres-grid { grid-template-columns: 1fr; }
+
+    /* CEREMONY CARDS */
     .services-grid { grid-template-columns: 1fr; }
-    .genres-grid { grid-template-columns: 1fr 1fr; }
+
+    /* TESTIMONIALS */
     .testimonials-grid { grid-template-columns: 1fr; }
-    .contact { grid-template-columns: 1fr; gap: 3rem; }
-    footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem; }
-    .about-facts { grid-template-columns: 1fr 1fr; }
+
+    /* FUNERALS */
+    #funerals > div { grid-template-columns: 1fr !important; gap: 3rem !important; }
+
+    /* CONTACT */
+    .contact { grid-template-columns: 1fr; gap: 3rem; padding: 4rem 1.5rem; }
     .form-row { grid-template-columns: 1fr; }
+
+    /* INSTAGRAM */
+    #instagram-section { padding: 3rem 1.5rem !important; }
+
+    /* FOOTER */
+    footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem 1.5rem; }
+
+    /* INLINE GRIDS (ceremony cards, song suggestions) */
+    div[style*="grid-template-columns: repeat(3"] {
+      grid-template-columns: 1fr !important;
+    }
+    div[style*="grid-template-columns: 1fr 1fr"] {
+      grid-template-columns: 1fr !important;
+    }
+
+    /* DIVIDER */
+    div[style*="Also available"] { padding: 2rem 1.5rem !important; }
+    div[style*="Also available"] p { font-size: 0.6rem !important; }
+    div[style*="Also available"] > div { gap: 1rem !important; }
   }
 </style>
+
+<script>
+  // Hamburger menu toggle — runs immediately on parse
+  document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (hamburger && mobileMenu) {
+      hamburger.addEventListener('click', function() {
+        mobileMenu.classList.toggle('open');
+      });
+      mobileMenu.querySelectorAll('a').forEach(function(link) {
+        link.addEventListener('click', function() {
+          mobileMenu.classList.remove('open');
+        });
+      });
+    }
+  });
+</script>
 </head>
 <body>
 
@@ -643,7 +741,21 @@
     <li><a href="#funerals">Funerals</a></li>
     <li><a href="#contact">Enquire</a></li>
   </ul>
+  <div class="nav-hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
 </nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#about">About</a>
+  <a href="#repertoire">Weddings</a>
+  <a href="#testimonials">Testimonials</a>
+  <a href="#funerals">Funerals</a>
+  <a href="#contact">Enquire</a>
+</div>
 
 <!-- HERO -->
 <section class="hero" id="home">
