@@ -619,6 +619,68 @@
 
   .footer-social a:hover { color: var(--gold); }
 
+  .footer-social .youtube-link {
+    background: linear-gradient(135deg, #ff0000, #cc0000);
+  }
+
+  .social-button-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .social-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+    padding: 1rem 2.2rem;
+    color: white;
+    text-decoration: none;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: opacity 0.3s, transform 0.2s;
+  }
+
+  .social-button:hover {
+    opacity: 0.85;
+    transform: translateY(-2px);
+  }
+
+  .social-button.instagram-link {
+    background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+  }
+
+  .social-button.youtube-link {
+    background: linear-gradient(135deg, #ff0000, #cc0000);
+  }
+
+  .youtube-channel-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.7rem;
+    margin-top: 2rem;
+    padding: 1rem 2.2rem;
+    background: linear-gradient(135deg, #ff0000, #cc0000);
+    color: white;
+    text-decoration: none;
+    font-size: 0.82rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: opacity 0.3s, transform 0.2s;
+  }
+
+  .youtube-channel-link:hover {
+    opacity: 0.85;
+    transform: translateY(-2px);
+  }
+
   /* ── SCROLL REVEAL ── */
   .reveal {
     opacity: 0;
@@ -920,6 +982,9 @@
       </div>
     </div>
   </div>
+  <a href="https://youtube.com/@ciaracreedonmusic?si=af8sUdLwkHhQ3mlG" target="_blank" rel="noopener" class="youtube-channel-link">
+    ▶ Watch more on YouTube
+  </a>
 </section>
 
 <!-- REPERTOIRE & SONG SUGGESTIONS -->
@@ -1210,16 +1275,16 @@
     <p class="section-tag">Follow Along</p>
     <h2 class="section-title" style="margin-bottom: 1rem;">See Ciara <em>in action</em></h2>
     <p style="font-size: 0.95rem; font-weight: 300; color: var(--mid); margin-bottom: 2rem;">
-      Watch performance clips and behind-the-scenes moments on Instagram.
+      Watch performance clips and behind-the-scenes moments on Instagram and YouTube.
     </p>
-    <a href="https://www.instagram.com/ciaracreedonmusic" target="_blank" rel="noopener"
-      style="display: inline-flex; align-items: center; gap: 0.7rem; padding: 1rem 2.2rem;
-             background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
-             color: white; text-decoration: none; font-family: 'Jost', sans-serif;
-             font-size: 0.85rem; letter-spacing: 0.18em; text-transform: uppercase;
-             font-weight: 500; transition: opacity 0.3s, transform 0.2s;">
-      📷 &nbsp;@ciaracreedonmusic
-    </a>
+    <div class="social-button-row">
+      <a href="https://www.instagram.com/ciaracreedonmusic" target="_blank" rel="noopener" class="social-button instagram-link">
+        📷 @ciaracreedonmusic
+      </a>
+      <a href="https://youtube.com/@ciaracreedonmusic?si=af8sUdLwkHhQ3mlG" target="_blank" rel="noopener" class="social-button youtube-link">
+        ▶ YouTube Channel
+      </a>
+    </div>
   </div>
 </section>
 
@@ -1230,6 +1295,9 @@
   <div class="footer-social">
     <a href="https://www.instagram.com/ciaracreedonmusic" target="_blank" rel="noopener">
       📷 @ciaracreedonmusic
+    </a>
+    <a href="https://youtube.com/@ciaracreedonmusic?si=af8sUdLwkHhQ3mlG" target="_blank" rel="noopener" class="youtube-link">
+      ▶ YouTube
     </a>
   </div>
 </footer>
