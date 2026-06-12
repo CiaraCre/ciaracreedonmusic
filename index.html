@@ -277,6 +277,7 @@
     grid-template-columns: 1fr 1fr;
     gap: 5rem;
     align-items: center;
+    padding: 6rem;
   }
 
   .about-text p {
@@ -287,11 +288,17 @@
     color: var(--mid);
   }
 
-  .about-facts {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    margin-top: 3rem;
+  .about-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+  }
+
+  .about-image img {
+    max-width: 90%;
+    height: auto;
+    filter: drop-shadow(0 4px 8px rgba(142, 111, 49, 0.08));
   }
 
   .fact {
@@ -1089,7 +1096,7 @@
 
   </div>
   <div class="about-image reveal" style="text-align: center;">
-    <img src="ciara-music-logo.jpg" alt="Ciara Creedon Music Logo - Guitar with flowers" style="max-width: 100%; height: auto; display: block;">
+    <img src="ciara-creedon-logo.jpg" alt="Ciara Creedon Music Logo - Purple guitar with flowers and musical notes" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
   </div>
 </section>
 
